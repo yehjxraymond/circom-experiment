@@ -4,7 +4,7 @@ This experiment aims to apply Zero-Knowledge Proof to verify that a person is ab
 
 ## Quick Demo
 
-Simon has been issued his ID with evidence of his birth year by his government. The evidence field has the value `0xAFDE9B79B5468DF38FEE34234F56742279C1D49BE864FA63C491A8A4335FEB1A`.
+Simon has been issued his ID with evidence of his birth year by his government. The evidence field has the value `0x2dbcf3ce17a38250f1e88cac9e0f5e41f1eacac7f7182bbd9b431fc3a583122e187a945dd2f2e92b2659e75ed98cbb220246d3906c80ee3e6c0b5480a90e1120`.
 
 With that value, we want to prove that Simon is above the legal age of 21, without revealing his actual age.
 
