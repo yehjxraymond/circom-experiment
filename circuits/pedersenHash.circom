@@ -1,5 +1,5 @@
-include "./node_modules/circomlib/circuits/pedersen.circom";
-include "./node_modules/circomlib/circuits/bitify.circom";
+include "../node_modules/circomlib/circuits/pedersen.circom";
+include "../node_modules/circomlib/circuits/bitify.circom";
 
 template PedersenHash() {
     signal private input message[2];
