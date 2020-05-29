@@ -6,5 +6,3 @@ template AgeCheck() {
 
     results <-- (comparisonYear - birthYear - minimumDifference)>=0 ? 1 : 0;
 }
-
-component main = AgeCheck();

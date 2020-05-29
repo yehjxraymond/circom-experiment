@@ -4,7 +4,7 @@ const tester = require("circom").tester;
 describe("pedersenHash", () => {
   it("should return the hash given two 128 bit inputs", async () => {
     const circuit = await tester(
-      path.join(__dirname, "..", "circuits", "pedersenHash.circom"),
+      path.join(__dirname, "..", "circuits", "pedersenHashMain.circom"),
       { reduceConstraints: false }
     );
     const witness1 = await circuit.calculateWitness({

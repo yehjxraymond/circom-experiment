@@ -18,7 +18,4 @@ template PedersenHash() {
 
     out[0] <== pedersen.out[0];
     out[1] <== pedersen.out[1];
-
 }
-
-component main = PedersenHash();

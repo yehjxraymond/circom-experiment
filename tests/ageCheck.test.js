@@ -4,7 +4,7 @@ const tester = require("circom").tester;
 describe("ageCheck", () => {
   it("should return results 1 when the age is above the restriction age", async () => {
     const circuit = await tester(
-      path.join(__dirname, "..", "circuits", "ageCheck.circom"),
+      path.join(__dirname, "..", "circuits", "ageCheckMain.circom"),
       { reduceConstraints: false }
     );
     const witness1 = await circuit.calculateWitness({
@@ -17,7 +17,7 @@ describe("ageCheck", () => {
 
   it("should return results 1 when the age is equal the restriction age", async () => {
     const circuit = await tester(
-      path.join(__dirname, "..", "circuits", "ageCheck.circom"),
+      path.join(__dirname, "..", "circuits", "ageCheckMain.circom"),
       { reduceConstraints: false }
     );
     const witness1 = await circuit.calculateWitness({
@@ -30,7 +30,7 @@ describe("ageCheck", () => {
 
   it("should return results 0 when the age is less the restriction age", async () => {
     const circuit = await tester(
-      path.join(__dirname, "..", "circuits", "ageCheck.circom"),
+      path.join(__dirname, "..", "circuits", "ageCheckMain.circom"),
       { reduceConstraints: false }
     );
     const witness1 = await circuit.calculateWitness({
