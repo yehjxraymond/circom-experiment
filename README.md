@@ -70,9 +70,11 @@ This system uses two high level constraints:
 
 ## Setup
 
+```sh
 npm i -g snarkjs
 npm i -g circom
 npm i
+```
 
 ## Running the circuit
 
