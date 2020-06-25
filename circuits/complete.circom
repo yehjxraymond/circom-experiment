@@ -1,5 +1,5 @@
 include "./ageCheck.circom";
-include "./pedersenHash.circom";
+include "./birthYearCheck.circom";
 
 template Complete() {
     signal private input birthYear;
@@ -9,25 +9,19 @@ template Complete() {
     signal input minimumDifference;
     signal output results;
 
-    signal computedHash[2];
-    signal comparisons[2];
-
-    component pedersen = PedersenHash();
     component ageCheck = AgeCheck();
-
-    pedersen.message[0] <== birthYear;
-    pedersen.message[1] <== rand;
-    computedHash[0] <== pedersen.out[0];
-    computedHash[1] <== pedersen.out[1];
-
-    comparisons[0] <--  computedHash[0]==hash[0];
-    comparisons[1] <--  computedHash[1]==hash[1];
+    component birthYearCheck = BirthYearCheck();
     
     ageCheck.birthYear <== birthYear;
     ageCheck.comparisonYear <== comparisonYear;
     ageCheck.minimumDifference <== minimumDifference;
 
-    results <-- comparisons[0] * comparisons[0] * ageCheck.results;
+    birthYearCheck.hash[0] <== hash[0];
+    birthYearCheck.hash[1] <== hash[1];
+    birthYearCheck.rand <== rand;
+    birthYearCheck.birthYear <== birthYear;
+
+    results <-- birthYearCheck.results * ageCheck.results;
 }
 
 component main = Complete();
